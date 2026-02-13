@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Тест - Бани Москвы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .bath-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        .bath-card h3 {
+            margin: 0 0 10px 0;
+            color: #667eea;
+        }
+        .contact {
+            color: #333;
+            margin: 5px 0;
+        }
+        .phone {
+            font-weight: bold;
+            color: #667eea;
+        }
+        .email {
+            color: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔥 Бани и сауны в Москве - ТЕСТ</h1>
+    <p id="count">Загрузка...</p>
+    <div id="baths-container"></div>
+
+    <script type="module">
+        // Импортируем данные
+        import { baths } from './src/data/cities/moskva.js';
+        
+        console.log('Бань загружено:', baths.length);
+        console.log('Первая баня:', baths[0]);
+        
+        // Показываем количество
+        document.getElementById('count').textContent = `Найдено ${baths.length} бань`;
+        
+        // Показываем первые 10 бань
+        const container = document.getElementById('baths-container');
+        
+        baths.slice(0, 10).forEach(bath => {
+            const card = document.createElement('div');
+            card.className = 'bath-card';
+            
+            card.innerHTML = `
+                <h3>${bath.name}</h3>
+                <p class="contact">📍 ${bath.address}</p>
+                <p class="contact phone">📞 ${bath.phone}</p>
+                ${bath.email ? `<p class="contact email">📧 ${bath.email}</p>` : ''}
+                ${bath.website ? `<p class="contact">🌐 ${bath.website}</p>` : ''}
+                <p class="contact">💰 ${bath.price}</p>
+                <p class="contact">⭐ ${bath.rating} (${bath.reviewCount} отзывов)</p>
+            `;
+            
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

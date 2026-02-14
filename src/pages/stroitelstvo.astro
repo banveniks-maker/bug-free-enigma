@@ -1,0 +1,343 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Строительство бань и саун под ключ - Банвеник.ру">
+  <div class="service-page">
+    <header class="page-hero">
+      <h1>🏗️ Построим баню вашей мечты</h1>
+      <p>Профессиональное строительство бань и саун по вашему проекту</p>
+    </header>
+
+    <section class="content-section">
+      <div class="info-block">
+        <h2>Что мы строим</h2>
+        <div class="types-grid">
+          <div class="type-card">
+            <h3>🏠 Русская баня</h3>
+            <p>Классическая баня из бруса или бревна</p>
+          </div>
+          <div class="type-card">
+            <h3>🌲 Финская сауна</h3>
+            <p>Сухая сауна с термодревом</p>
+          </div>
+          <div class="type-card">
+            <h3>🏛️ Турецкий хамам</h3>
+            <p>Мраморный хамам с парогенератором</p>
+          </div>
+          <div class="type-card">
+            <h3>💎 Банные комплексы</h3>
+            <p>С бассейном, комнатой отдыха, террасой</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-block">
+        <h2>Наши услуги</h2>
+        <div class="services-list-detailed">
+          <div class="service-item">
+            <div class="service-icon">📐</div>
+            <div class="service-content">
+              <h3>Проектирование</h3>
+              <p>Разработка индивидуального проекта под ваш участок</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🏗️</div>
+            <div class="service-content">
+              <h3>Строительство</h3>
+              <p>Фундамент, стены, кровля - всё под ключ</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🔥</div>
+            <div class="service-content">
+              <h3>Печи и оборудование</h3>
+              <p>Установка печей, вентиляции, освещения</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">✨</div>
+            <div class="service-content">
+              <h3>Отделка</h3>
+              <p>Внутренняя и внешняя отделка</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-block">
+        <h2>Примерные цены</h2>
+        <div class="price-cards">
+          <div class="price-option">
+            <h3>Бюджетная баня</h3>
+            <p class="description">4×4 м, каркасная</p>
+            <div class="price-value">От 350,000₽</div>
+          </div>
+          <div class="price-option popular">
+            <div class="badge-price">Популярная</div>
+            <h3>Стандартная баня</h3>
+            <p class="description">6×4 м, из бруса</p>
+            <div class="price-value">От 800,000₽</div>
+          </div>
+          <div class="price-option">
+            <h3>Премиум баня</h3>
+            <p class="description">8×6 м, из бревна</p>
+            <div class="price-value">От 1,500,000₽</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-section-build">
+        <h2>💼 Для строительных компаний</h2>
+        <p class="cta-text">Разместите свои услуги и получайте заказы на строительство!</p>
+        
+        <div class="pricing-card-build">
+          <h3>Размещение услуг строительства</h3>
+          <div class="big-price">2,000₽<span>/месяц</span></div>
+          <ul>
+            <li>✅ Размещение в разделе "Строительство"</li>
+            <li>✅ Портфолио ваших работ</li>
+            <li>✅ Контакты и прайс</li>
+            <li>✅ Отзывы клиентов</li>
+            <li>✅ Лицензии и сертификаты</li>
+            <li>✅ Показ по всей России</li>
+          </ul>
+          <a href="mailto:banveniks@gmail.com?subject=Размещение услуг строительства" class="cta-button-build">Разместить услуги</a>
+        </div>
+
+        <div class="example-earnings">
+          <h3>💰 Средний заказ:</h3>
+          <p class="big-number">800,000₽</p>
+          <p>1 заказ в месяц полностью окупает размещение в 400 раз!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <h2>📞 Контакты</h2>
+      <p>Для размещения услуг строительства:</p>
+      <a href="mailto:banveniks@gmail.com" class="email-link">banveniks@gmail.com</a>
+    </section>
+  </div>
+</Layout>
+
+<style>
+.service-page {
+  min-height: 100vh;
+}
+
+.page-hero {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.content-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.info-block,
+.services-block,
+.pricing-block {
+  margin-bottom: 4rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.type-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #e0e0e0;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.type-card:hover {
+  border-color: #ff9800;
+  transform: translateY(-5px);
+}
+
+.services-list-detailed {
+  display: grid;
+  gap: 2rem;
+}
+
+.service-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.service-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.service-content h3 {
+  margin-bottom: 0.5rem;
+}
+
+.price-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.price-option {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #e0e0e0;
+  text-align: center;
+  position: relative;
+}
+
+.price-option.popular {
+  border-color: #ff9800;
+  box-shadow: 0 4px 24px rgba(255, 152, 0, 0.3);
+}
+
+.badge-price {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #ff9800;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.description {
+  color: #666;
+  margin: 1rem 0;
+}
+
+.price-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff9800;
+  margin-top: 1rem;
+}
+
+.cta-section-build {
+  background: linear-gradient(135deg, #fff9e6 0%, #ffffff 100%);
+  padding: 3rem;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.pricing-card-build {
+  background: white;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  padding: 3rem;
+  border-radius: 16px;
+  border: 3px solid #ff9800;
+  box-shadow: 0 4px 24px rgba(255, 152, 0, 0.2);
+}
+
+.big-price {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ff9800;
+  margin: 1rem 0 2rem;
+}
+
+.big-price span {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.pricing-card-build ul {
+  text-align: left;
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.pricing-card-build li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1.1rem;
+}
+
+.cta-button-build {
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  background: #ff9800;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.cta-button-build:hover {
+  background: #f57c00;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255, 152, 0, 0.3);
+}
+
+.example-earnings {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.big-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ff9800;
+  margin: 1rem 0;
+}
+
+.contact-section {
+  background: #f8f9fa;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.email-link {
+  font-size: 1.5rem;
+  color: #ff9800;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .service-item {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>

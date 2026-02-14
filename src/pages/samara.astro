@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const city = "Самара";
+const citySlug = "samara";
+
+// Импортируем напрямую из файла города - быстрая загрузка!
+const { baths } = await import('../data/cities/samara.js');
+---
+
+<Layout title={`Бани в ${city} — Банвеник.ру`}>
+  <div class="city-page">
+    <header class="city-header">
+      <h1>🔥 Бани и сауны в {city}</h1>
+      <p class="count">Найдено {baths.length} бань • Рейтинги • Отзывы • Цены</p>
+    </header>
+
+    <div class="baths-grid">
+      {baths.map((bath) => (
+        <div class="bath-card">
+          <div class="bath-content">
+            <div class="bath-header">
+              <h3>{bath.name}</h3>
+              <div class="rating">⭐ {bath.rating}</div>
+            </div>
+            
+            <div class="bath-types">
+              {bath.types.map(type => (
+                <span class="bath-type">{type}</span>
+              ))}
+            </div>
+
+            <div class="bath-info">
+              <p><strong>📍</strong> {bath.address}</p>
+              <p><strong>📞</strong> <a href={`tel:${bath.phone.replace(/[^+\\d]/g, '')}`}>{bath.phone}</a></p>
+              <p><strong>🕐</strong> {bath.hours}</p>
+              <p><strong>💰</strong> {bath.price}</p>
+              {bath.email && <p><strong>📧</strong> {bath.email}</p>}
+            </div>
+
+            <div class="reviews">
+              💬 {bath.reviewCount} отзывов
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+.city-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.city-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.city-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.count {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.baths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.bath-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.bath-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.bath-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.bath-header h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0;
+}
+
+.rating {
+  font-size: 1.1rem;
+  color: #FFB800;
+}
+
+.bath-types {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.bath-type {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.bath-info {
+  margin: 1rem 0;
+  line-height: 1.8;
+}
+
+.bath-info p {
+  margin: 0.5rem 0;
+  color: #444;
+}
+
+.bath-info a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.bath-info a:hover {
+  text-decoration: underline;
+}
+
+.reviews {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .baths-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .city-header h1 {
+    font-size: 2rem;
+  }
+}
+</style>

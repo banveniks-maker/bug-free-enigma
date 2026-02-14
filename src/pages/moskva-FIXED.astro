@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getBathsForCity } from '../data/baths.js';
+
+const city = "Москва";
+const citySlug = "moskva";
+
+// Получаем РЕАЛЬНЫЕ данные из baths.js
+const baths = getBathsForCity(citySlug);
+---
+
+<Layout title={`Бани в ${city}е — Банвеник.ру`}>
+  <div class="city-page">
+    <header class="city-header">
+      <h1>🔥 Бани и сауны в {city}е</h1>
+      <p>Найдено {baths.length} бань</p>
+    </header>
+
+    <div class="baths-grid">
+      {baths.map((bath) => (
+        <div class="bath-card">
+          <h3>{bath.name}</h3>
+          
+          <div class="bath-types">
+            {bath.types.map(type => (
+              <span class="bath-type">{type}</span>
+            ))}
+          </div>
+
+          <div class="bath-info">
+            <p><strong>📍 Адрес:</strong> {bath.address}</p>
+            <p><strong>📞 Телефон:</strong> <a href={`tel:${bath.phone.replace(/[^+\d]/g, '')}`}>{bath.phone}</a></p>
+            <p><strong>🕐 Режим:</strong> {bath.hours}</p>
+            <p><strong>💰 Цена:</strong> {bath.price}</p>
+          </div>
+
+          <div class="bath-features">
+            <p>{bath.features}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <a href="/" class="back-link">← Вернуться на главную</a>
+  </div>
+</Layout>
+
+<style>
+  .city-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .city-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .city-header h1 {
+    font-size: 3em;
+    color: #667eea;
+    margin-bottom: 10px;
+  }
+
+  .baths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  .bath-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+
+  .bath-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+  }
+
+  .bath-card h3 {
+    font-size: 1.5em;
+    color: #667eea;
+    margin-bottom: 15px;
+  }
+
+  .bath-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .bath-type {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+  }
+
+  .bath-info {
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+
+  .bath-info p {
+    margin: 5px 0;
+  }
+
+  .bath-info a {
+    color: #667eea;
+    text-decoration: none;
+  }
+
+  .bath-info a:hover {
+    text-decoration: underline;
+  }
+
+  .bath-features {
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    color: #666;
+    font-size: 0.95em;
+  }
+
+  .back-link {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #667eea;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.3s;
+  }
+
+  .back-link:hover {
+    background: #764ba2;
+  }
+
+  @media (max-width: 768px) {
+    .baths-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .city-header h1 {
+      font-size: 2em;
+    }
+  }
+</style>

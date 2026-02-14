@@ -1,0 +1,323 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Мобильная баня - аренда и изготовление - Банвеник.ру">
+  <div class="service-page">
+    <header class="page-hero mobile">
+      <h1>🚐 Мобильная баня</h1>
+      <p>Аренда и изготовление мобильных бань на заказ</p>
+    </header>
+
+    <section class="content-section">
+      <div class="what-is">
+        <h2>Что такое мобильная баня?</h2>
+        <p class="intro-text">Мобильная баня — это полноценная парилка на колёсах! Привезём на ваш участок, мероприятие или стройку.</p>
+        
+        <div class="advantages">
+          <div class="adv-card">
+            <div class="icon">🚗</div>
+            <h3>Привезём куда угодно</h3>
+            <p>На дачу, стройку, праздник, рыбалку</p>
+          </div>
+          <div class="adv-card">
+            <div class="icon">⚡</div>
+            <h3>Быстрый монтаж</h3>
+            <p>Готова к использованию за 1-2 часа</p>
+          </div>
+          <div class="adv-card">
+            <div class="icon">💰</div>
+            <h3>Дешевле строительства</h3>
+            <p>Не нужен фундамент и разрешения</p>
+          </div>
+          <div class="adv-card">
+            <div class="icon">🔥</div>
+            <h3>Полноценная баня</h3>
+            <p>Печь, лавки, освещение, вентиляция</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-section">
+        <h2>Наши услуги</h2>
+        
+        <div class="service-tabs">
+          <div class="tab-content">
+            <h3>🏠 Аренда мобильной бани</h3>
+            <p>Идеально для:</p>
+            <ul>
+              <li>Праздников и мероприятий</li>
+              <li>Пока строится своя баня</li>
+              <li>Тестирования перед покупкой</li>
+              <li>Разовых выездов на природу</li>
+            </ul>
+            <p class="price-text">Аренда: от 3,000₽/день</p>
+          </div>
+
+          <div class="tab-content">
+            <h3>🛠️ Изготовление на заказ</h3>
+            <p>Делаем под ваши требования:</p>
+            <ul>
+              <li>Размер: от 2×2 до 6×3 метров</li>
+              <li>На прицепе или контейнере</li>
+              <li>С бассейном или купелью</li>
+              <li>Электрическая или дровяная печь</li>
+            </ul>
+            <p class="price-text">Изготовление: от 250,000₽</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <h2>💼 Для производителей и арендодателей</h2>
+        <p class="cta-subtitle">Разместите свои услуги и получайте заказы!</p>
+        
+        <div class="offer-card">
+          <h3>Размещение услуг мобильной бани</h3>
+          <div class="big-price-mobile">1,500₽<span>/месяц</span></div>
+          <ul>
+            <li>✅ Размещение в разделе "Мобильная баня"</li>
+            <li>✅ Фото ваших бань</li>
+            <li>✅ Цены на аренду и изготовление</li>
+            <li>✅ Контакты и регион работы</li>
+            <li>✅ Отзывы клиентов</li>
+            <li>✅ Приоритет в поиске</li>
+          </ul>
+          <a href="mailto:banveniks@gmail.com?subject=Размещение мобильной бани" class="btn-order">Разместить</a>
+        </div>
+
+        <div class="earnings-example">
+          <h3>💰 Ваша выгода:</h3>
+          <div class="calc-grid">
+            <div class="calc-item">
+              <p>Аренда:</p>
+              <p class="calc-value">10 выездов × 3,000₽ = 30,000₽/мес</p>
+            </div>
+            <div class="calc-item">
+              <p>Изготовление:</p>
+              <p class="calc-value">1 заказ = 250,000₽+</p>
+            </div>
+          </div>
+          <p class="roi-text">Размещение за 1,500₽ окупается с первого же заказа!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <h2>📞 Контакты</h2>
+      <p>Для размещения услуг мобильной бани:</p>
+      <a href="mailto:banveniks@gmail.com" class="email-link">banveniks@gmail.com</a>
+    </section>
+  </div>
+</Layout>
+
+<style>
+.page-hero.mobile {
+  background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.content-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.intro-text {
+  font-size: 1.3rem;
+  text-align: center;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.adv-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  border: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.adv-card:hover {
+  border-color: #4caf50;
+  transform: translateY(-5px);
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.service-tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.tab-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #4caf50;
+}
+
+.tab-content ul {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.tab-content li {
+  margin: 0.8rem 0;
+  line-height: 1.6;
+}
+
+.price-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #4caf50;
+  margin-top: 1.5rem;
+}
+
+.cta-block {
+  background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+  padding: 3rem;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.cta-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.offer-card {
+  background: white;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  padding: 3rem;
+  border-radius: 16px;
+  border: 3px solid #4caf50;
+  box-shadow: 0 4px 24px rgba(76, 175, 80, 0.2);
+}
+
+.big-price-mobile {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #4caf50;
+  margin: 1rem 0 2rem;
+}
+
+.big-price-mobile span {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.offer-card ul {
+  text-align: left;
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.offer-card li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1.1rem;
+}
+
+.btn-order {
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  background: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-order:hover {
+  background: #388e3c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(76, 175, 80, 0.3);
+}
+
+.earnings-example {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.calc-item {
+  text-align: center;
+}
+
+.calc-value {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #4caf50;
+  margin-top: 0.5rem;
+}
+
+.roi-text {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-section {
+  background: #f8f9fa;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.email-link {
+  font-size: 1.5rem;
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .service-tabs {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

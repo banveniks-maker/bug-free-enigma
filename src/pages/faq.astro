@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    q: "Как часто можно ходить в баню?",
+    a: "Здоровым людям рекомендуется посещать баню 1-2 раза в неделю. Спортсменам можно чаще - 2-3 раза. Важно прислушиваться к своему организму."
+  },
+  {
+    q: "Сколько времени можно находиться в парилке?",
+    a: "Новичкам рекомендуется начинать с 5-7 минут. Опытные банщики могут находиться 10-15 минут. Обычно делают 3-4 захода с перерывами."
+  },
+  {
+    q: "Можно ли в баню с температурой?",
+    a: "Нет! При повышенной температуре, простуде в острой фазе, гриппе посещение бани противопоказано. Можно только после полного выздоровления."
+  },
+  {
+    q: "Что лучше: до бани поесть или после?",
+    a: "Лучше поесть за 1,5-2 часа до бани. На голодный желудок париться тяжело, а на полный - вредно для сердца. После бани можно есть через 20-30 минут."
+  },
+  {
+    q: "Какая температура должна быть в русской бане?",
+    a: "Оптимальная температура в русской бане - 60-80°C при влажности 40-65%. Это мягче, чем в финской сауне (80-110°C), но более влажно."
+  },
+  {
+    q: "Можно ли в баню беременным?",
+    a: "Только после консультации с врачом! В первом триместре - крайне не рекомендуется. Во 2-3 триместре - только с разрешения врача и при хорошем самочувствии."
+  },
+  {
+    q: "Помогает ли баня похудеть?",
+    a: "Да, но не сама по себе. Баня ускоряет обмен веществ, выводит лишнюю воду, сжигает 300-500 калорий за сеанс. Эффективна в комплексе с диетой и спортом."
+  },
+  {
+    q: "Какой веник лучше для бани?",
+    a: "Берёзовый - универсальный, хорош для кожи. Дубовый - для гипертоников и жирной кожи. Эвкалиптовый - при простуде. Липовый - успокаивающий."
+  },
+  {
+    q: "Можно ли в баню с похмелья?",
+    a: "Крайне не рекомендуется! Алкоголь даёт большую нагрузку на сердце, баня усилит её. Может привести к инфаркту. Лучше подождать 2-3 дня."
+  },
+  {
+    q: "Что пить в бане?",
+    a: "Лучше всего - травяной чай (липа, мята, ромашка), морс, квас. Обязательно пить воду. Избегайте алкоголя, кофе и газировки."
+  },
+  {
+    q: "Нужно ли мыться перед парилкой?",
+    a: "Да, обязательно! Примите тёплый душ без мыла, чтобы смыть грязь и подготовить кожу. Голову мочить не обязательно, но тело - обязательно."
+  },
+  {
+    q: "Баня или сауна - что полезнее?",
+    a: "Русская баня мягче из-за высокой влажности, лучше для дыхательной системы. Финская сауна жёстче, больше нагружает сердце. Выбор зависит от состояния здоровья."
+  }
+];
+---
+
+<Layout title="Частые вопросы о бане - Банвеник.ру">
+  <div class="faq-page">
+    <header class="page-header">
+      <h1>❓ Частые вопросы о бане</h1>
+      <p class="subtitle">Ответы на самые популярные вопросы о банных процедурах</p>
+    </header>
+
+    <div class="faq-list">
+      {faqs.map((faq, index) => (
+        <div class="faq-item">
+          <details>
+            <summary>
+              <span class="number">{index + 1}</span>
+              <span class="question">{faq.q}</span>
+              <span class="icon">▼</span>
+            </summary>
+            <div class="answer">{faq.a}</div>
+          </details>
+        </div>
+      ))}
+    </div>
+
+    <section class="cta">
+      <h2>Не нашли ответ на свой вопрос?</h2>
+      <p>Загляните в наш <a href="/blog">блог</a> или изучите <a href="/polza-bani">пользу бани</a></p>
+    </section>
+  </div>
+</Layout>
+
+<style>
+.faq-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.faq-list {
+  margin-bottom: 3rem;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+details {
+  cursor: pointer;
+}
+
+summary {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+summary:hover {
+  background: #f8f9fa;
+}
+
+.number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.question {
+  flex: 1;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.icon {
+  color: #667eea;
+  transition: transform 0.3s;
+}
+
+details[open] .icon {
+  transform: rotate(180deg);
+}
+
+.answer {
+  padding: 0 1.5rem 1.5rem 4.5rem;
+  color: #666;
+  line-height: 1.6;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
+
+.cta {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.cta a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta a:hover {
+  color: #764ba2;
+}
+</style>

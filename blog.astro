@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const articles = [
+  {
+    title: "Как правильно париться в русской бане",
+    excerpt: "Подробное руководство для новичков: температура, влажность, веники и техника парения",
+    date: "2026-02-10",
+    image: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800"
+  },
+  {
+    title: "Веники для бани: выбор и заготовка",
+    excerpt: "Берёзовый, дубовый, эвкалиптовый - какой веник выбрать и как правильно его подготовить",
+    date: "2026-02-08",
+    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800"
+  },
+  {
+    title: "Баня и здоровье: научные факты",
+    excerpt: "Что говорят исследования о влиянии бани на сердечно-сосудистую систему",
+    date: "2026-02-05",
+    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800"
+  },
+  {
+    title: "Контрастные процедуры: польза и вред",
+    excerpt: "Как правильно чередовать жар и холод для максимального эффекта",
+    date: "2026-02-01",
+    image: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800"
+  },
+  {
+    title: "Ароматерапия в бане",
+    excerpt: "Лучшие эфирные масла для банных процедур и их лечебные свойства",
+    date: "2026-01-28",
+    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800"
+  },
+  {
+    title: "Баня для спортсменов",
+    excerpt: "Как баня помогает восстановлению после тренировок и наращиванию мышечной массы",
+    date: "2026-01-25",
+    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800"
+  }
+];
+---
+
+<Layout title="Блог о банях - Банвеник.ру">
+  <div class="blog-page">
+    <header class="page-header">
+      <h1>📝 Блог о банях</h1>
+      <p class="subtitle">Полезные статьи, советы и лайфхаки для любителей бани</p>
+    </header>
+
+    <div class="articles-grid">
+      {articles.map(article => (
+        <article class="article-card">
+          <img src={article.image} alt={article.title} class="article-image">
+          <div class="article-content">
+            <div class="article-date">{new Date(article.date).toLocaleDateString('ru-RU')}</div>
+            <h2>{article.title}</h2>
+            <p>{article.excerpt}</p>
+            <a href="#" class="read-more">Читать далее →</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+.blog-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.article-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(102,126,234,0.2);
+}
+
+.article-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.article-content {
+  padding: 1.5rem;
+}
+
+.article-date {
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-card h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.article-card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.read-more:hover {
+  color: #764ba2;
+}
+</style>

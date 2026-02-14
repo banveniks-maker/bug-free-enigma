@@ -53,23 +53,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </style>
 </head>
 <body class="min-h-screen bg-gray-50">
-  <header class="bg-white shadow-sm sticky top-0 z-50">
-    <nav class="container mx-auto px-4 py-4">
-      <div class="flex items-center justify-between">
-        <a href="/" class="text-2xl font-bold text-amber-700">БанВеник.ру</a>
-        <ul class="hidden md:flex space-x-6">
-          <li><a href="/#services" class="text-gray-700 hover:text-amber-700 transition">Услуги</a></li>
-          <li><a href="/#prices" class="text-gray-700 hover:text-amber-700 transition">Тарифы</a></li>
-          <li><a href="/#about" class="text-gray-700 hover:text-amber-700 transition">О нас</a></li>
-          <li><a href="/#contact" class="text-gray-700 hover:text-amber-700 transition">Контакты</a></li>
-        </ul>
-        <a href="tel:+79000000000" class="bg-amber-700 text-white px-6 py-2 rounded-lg hover:bg-amber-800 transition">
-          Позвонить
-        </a>
-      </div>
-    </nav>
-  </header>
-
   <main>
     <slot />
   </main>
@@ -84,17 +67,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <div>
           <h4 class="text-lg font-semibold text-white mb-4">Навигация</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="/#services" class="hover:text-amber-500 transition">Услуги</a></li>
-            <li><a href="/#prices" class="hover:text-amber-500 transition">Тарифы</a></li>
+            <li><a href="/#tariffs" class="hover:text-amber-500 transition">Тарифы</a></li>
             <li><a href="/#about" class="hover:text-amber-500 transition">О нас</a></li>
-            <li><a href="/#contact" class="hover:text-amber-500 transition">Контакты</a></li>
+            <li><a href="/#contacts" class="hover:text-amber-500 transition">Контакты</a></li>
           </ul>
         </div>
         <div>
           <h4 class="text-lg font-semibold text-white mb-4">Контакты</h4>
           <ul class="space-y-2 text-sm">
-            <li>Телефон: <a href="tel:+79000000000" class="hover:text-amber-500 transition">+7 (900) 000-00-00</a></li>
-            <li>Email: <a href="mailto:info@banvenik.ru" class="hover:text-amber-500 transition">info@banvenik.ru</a></li>
+            <li>Email: <a href="mailto:banveniks@gmail.com" class="hover:text-amber-500 transition">banveniks@gmail.com</a></li>
           </ul>
         </div>
       </div>
@@ -105,3 +86,5 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </footer>
 </body>
 </html>
+
+   

@@ -17,7 +17,7 @@ const baths = getBathsForCity(citySlug);
     </header>
 
     <div class="baths-grid">
-      {baths.map((bath) => (
+      {Array.isArray(baths) && baths.map((bath) => (
         <div class="bath-card">
           <h3>{bath.name}</h3>
           

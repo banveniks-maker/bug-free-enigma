@@ -9,7 +9,7 @@ interface Props {
 const { 
   title, 
   description = "Бани и веники", 
-  keywords = "бани, сауны, парные, банный комплекс", 
+  keywords = "бани, сауны", 
   ogImage = "/default-og.png" 
 } = Astro.props;
 ---
@@ -18,12 +18,12 @@ const {
 <html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="keywords" content={keywords} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta property="og:image" content={ogImage} />
 		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta property="og:image" content={ogImage} />
 	</head>
 	<body>
 		<slot />

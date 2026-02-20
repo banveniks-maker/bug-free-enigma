@@ -1,12 +1,12 @@
 ---
 interface Props {
   title: string;
-  description: string;
+  description?: string;
   keywords?: string;
   ogImage?: string;
 }
 
-const { title, description, keywords = "бани, сауны, парные, банный комплекс, русская баня, финская сауна", ogImage = "/og-image.jpg" } = Astro.props;
+const { title, description, keywords , ogImage = "/og-image.jpg" } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 

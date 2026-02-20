@@ -1,0 +1,866 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const cities = [
+  {name: 'Москва', slug: 'moskva', count: 1200},
+  {name: 'Санкт-Петербург', slug: 'sankt-peterburg', count: 1200},
+  {name: 'Новосибирск', slug: 'novosibirsk', count: 1000},
+  {name: 'Екатеринбург', slug: 'ekaterinburg', count: 1000},
+  {name: 'Казань', slug: 'kazan', count: 1000},
+  // ... остальные города (сокращено для примера)
+];
+
+const totalBaths = 53000;
+---
+
+<Layout title="Банвеник.ру - Революция в мире бань" description="53,000 бань по всей России">
+  <div class="premium-site">
+    <!-- Анимированный фон -->
+    <div class="animated-bg">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <!-- Навигация в стиле Tesla -->
+    <nav class="premium-nav">
+      <div class="nav-wrapper">
+        <a href="/" class="brand">БАНВЕНИК</a>
+        <div class="nav-menu">
+          <a href="#cities">Города</a>
+          <a href="#features">Возможности</a>
+          <a href="#pricing">Тарифы</a>
+          <a href="/chatbot" class="nav-cta">🤖 AI Помощник</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Футуристичный герой -->
+    <section class="hero-premium">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="label">Революция в мире бань</div>
+          <h1 class="hero-title">
+            Найди свою<br/>
+            <span class="gradient-text">идеальную баню</span>
+          </h1>
+          <p class="hero-description">
+            53,000 бань • 94 города • AI-помощник • Мгновенный поиск
+          </p>
+          
+          <div class="hero-actions">
+            <a href="#cities" class="btn-primary">
+              Начать поиск
+              <span class="btn-arrow">→</span>
+            </a>
+            <a href="/chatbot" class="btn-secondary">
+              <span class="btn-icon">🤖</span>
+              Спросить AI
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">53K+</div>
+              <div class="stat-label">Бань</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">94</div>
+              <div class="stat-label">Города</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Поддержка</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="glass-card">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div class="feature-icon">🔥</div>
+              <h3>Smart Search</h3>
+              <p>Найди баню за 3 секунды</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Города в премиум стиле -->
+    <section class="cities-premium" id="cities">
+      <div class="section-header">
+        <span class="section-label">Доступно по всей России</span>
+        <h2>Выберите ваш город</h2>
+      </div>
+
+      <div class="cities-grid-premium">
+        {cities.slice(0, 12).map(city => (
+          <a href={`/${city.slug}`} class="city-card-premium">
+            <div class="card-shine"></div>
+            <div class="city-name">{city.name}</div>
+            <div class="city-count">{city.count} бань</div>
+            <div class="card-arrow">→</div>
+          </a>
+        ))}
+      </div>
+
+      <div class="view-all">
+        <button class="btn-outline">Показать все 94 города</button>
+      </div>
+    </section>
+
+    <!-- Возможности -->
+    <section class="features-premium" id="features">
+      <div class="section-header">
+        <span class="section-label">Технологии будущего</span>
+        <h2>Почему выбирают нас</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card-premium">
+          <div class="feature-icon-large">🤖</div>
+          <h3>AI-помощник</h3>
+          <p>Чат-бот на базе искусственного интеллекта ответит на любой вопрос о банях</p>
+        </div>
+
+        <div class="feature-card-premium">
+          <div class="feature-icon-large">⚡</div>
+          <h3>Мгновенный поиск</h3>
+          <p>Найдите баню за 3 секунды среди 53,000 вариантов</p>
+        </div>
+
+        <div class="feature-card-premium">
+          <div class="feature-icon-large">💎</div>
+          <h3>Проверенные бани</h3>
+          <p>100% реальные контакты и актуальная информация</p>
+        </div>
+
+        <div class="feature-card-premium">
+          <div class="feature-icon-large">🎯</div>
+          <h3>Персональные рекомендации</h3>
+          <p>Подберём идеальную баню под ваши предпочтения</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Тарифы в стиле Tesla -->
+    <section class="pricing-premium" id="pricing">
+      <div class="section-header">
+        <span class="section-label">Для владельцев бань</span>
+        <h2>Выберите план</h2>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-header">
+            <h3>Базовый</h3>
+            <div class="price">3,000₽<span>/мес</span></div>
+          </div>
+          <ul class="price-features">
+            <li>✓ Размещение в каталоге</li>
+            <li>✓ Контакты и фото</li>
+            <li>✓ График работы</li>
+          </ul>
+          <button class="price-btn">Подключить</button>
+        </div>
+
+        <div class="price-card featured">
+          <div class="popular-badge">Популярный</div>
+          <div class="price-header">
+            <h3>Стандарт</h3>
+            <div class="price">5,000₽<span>/мес</span></div>
+          </div>
+          <ul class="price-features">
+            <li>✓ Всё из Базового</li>
+            <li>✓ Приоритет в выдаче</li>
+            <li>✓ Галерея фото</li>
+            <li>✓ Отзывы клиентов</li>
+          </ul>
+          <button class="price-btn primary">Начать сейчас</button>
+        </div>
+
+        <div class="price-card">
+          <div class="price-header">
+            <h3>VIP</h3>
+            <div class="price">10,000₽<span>/мес</span></div>
+          </div>
+          <ul class="price-features">
+            <li>✓ Всё из Стандарт</li>
+            <li>✓ ТОП-1 позиция</li>
+            <li>✓ Персональный менеджер</li>
+            <li>✓ Email-рассылки</li>
+          </ul>
+          <button class="price-btn">Подключить VIP</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA секция -->
+    <section class="cta-premium">
+      <div class="cta-content">
+        <h2>Готовы начать?</h2>
+        <p>Присоединяйтесь к 53,000+ бань по всей России</p>
+        <div class="cta-buttons">
+          <a href="#cities" class="btn-primary large">Найти баню</a>
+          <a href="mailto:banveniks@gmail.com" class="btn-secondary large">Связаться</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Футер в стиле минимализм -->
+    <footer class="footer-premium">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="brand">БАНВЕНИК</div>
+          <p>Революция в мире бань</p>
+        </div>
+        <div class="footer-links">
+          <a href="/chatbot">AI Помощник</a>
+          <a href="/polza-bani">Польза</a>
+          <a href="/sotrudnichestvo">Сотрудничество</a>
+          <a href="mailto:banveniks@gmail.com">Контакты</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Банвеник.ру • banveniks@gmail.com</p>
+      </div>
+    </footer>
+  </div>
+</Layout>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.premium-site {
+  background: #000;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Анимированный фон */
+.animated-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.5) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 20s infinite ease-in-out;
+}
+
+.particle:nth-child(1) {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  top: 60%;
+  right: 10%;
+  animation-delay: 5s;
+}
+
+.particle:nth-child(3) {
+  width: 150px;
+  height: 150px;
+  bottom: 20%;
+  left: 50%;
+  animation-delay: 10s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(50px, -50px); }
+  50% { transform: translate(-30px, 50px); }
+  75% { transform: translate(30px, 30px); }
+}
+
+/* Навигация */
+.premium-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+  padding: 1.5rem 0;
+}
+
+.nav-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  padding: 0.5rem 1rem;
+}
+
+.nav-menu a:hover {
+  color: #3b82f6;
+}
+
+.nav-cta {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem !important;
+}
+
+/* Герой */
+.hero-premium {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 2rem 4rem;
+  z-index: 1;
+}
+
+.hero-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.label {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #3b82f6;
+  margin-bottom: 2rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  margin-bottom: 3rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: #fff;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 3rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Glass Card */
+.glass-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 3rem;
+  overflow: hidden;
+}
+
+.card-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Секции */
+section {
+  position: relative;
+  padding: 6rem 2rem;
+  z-index: 1;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-label {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/* Города */
+.cities-grid-premium {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.city-card-premium {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.city-card-premium:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #3b82f6;
+  transform: translateY(-5px);
+}
+
+.card-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: 0.5s;
+}
+
+.city-card-premium:hover .card-shine {
+  left: 100%;
+}
+
+.city-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.city-count {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.card-arrow {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.city-card-premium:hover .card-arrow {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* Возможности */
+.features-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.feature-card-premium {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 3rem;
+  transition: all 0.3s;
+}
+
+.feature-card-premium:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+}
+
+.feature-icon-large {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-card-premium h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card-premium p {
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* Тарифы */
+.pricing-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.price-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.price-card.featured {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+  transform: scale(1.05);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.price-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.price span {
+  font-size: 1rem;
+  color: #64748b;
+}
+
+.price-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.price-features li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
+}
+
+.price-btn {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.price-btn.primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  border: none;
+}
+
+.price-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* CTA */
+.cta-premium {
+  text-align: center;
+  padding: 8rem 2rem;
+}
+
+.cta-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  margin-bottom: 3rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.btn-primary.large,
+.btn-secondary.large {
+  padding: 1.5rem 3rem;
+  font-size: 1.1rem;
+}
+
+/* Футер */
+.footer-premium {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3rem 2rem 2rem;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-brand p {
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.footer-links a:hover {
+  color: #3b82f6;
+}
+
+.footer-bottom {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .price-card.featured {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    gap: 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+</style>
+
+<script>
+// Плавная прокрутка
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Показать все города
+const showAllBtn = document.querySelector('.btn-outline');
+if (showAllBtn) {
+  showAllBtn.addEventListener('click', () => {
+    alert('Функция в разработке! Скоро будет доступна полная карта всех 94 городов.');
+  });
+}
+</script>
